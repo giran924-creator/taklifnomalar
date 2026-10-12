@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {normalizeGuest} from '../js/uzbek.js';
+test('guest personalization limits text and removes controls and markup delimiters',()=>{assert.equal(normalizeGuest('  Shahzod  '),'Shahzod');assert.equal(normalizeGuest('<img\u0000>'),'img');assert.equal(normalizeGuest('a'.repeat(100)).length,60);assert.equal(normalizeGuest(''),'');});

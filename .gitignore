@@ -1,0 +1,19 @@
+node_modules/
+test-results/
+
+# Local secrets and environment configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Caches, logs and local review outputs
+.cache/
+.npm/
+__pycache__/
+*.py[cod]
+*.log
+playwright-report/
+screenshots/
+review-screenshots/
+.DS_Store

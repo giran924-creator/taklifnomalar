@@ -1,0 +1,149 @@
+/* Uzbek Heritage: carved arch, suzani rosette and restrained adras textile. */
+[data-theme=uzbek]{--bg:#f6f0e3;--ink:#173f35;--accent:#b49a63;--muted:#677267;--panel:#ece3d1;--line:#b49a6355;--texture:none}
+[data-theme=uzbek] main{background:#f6f0e3}
+[data-theme=uzbek] .uz-courtyard{background:radial-gradient(ellipse at 50% 37%,#a48b4540,transparent 46%),linear-gradient(130deg,#163e34,#082c25 65%,#123c32);color:#f5eddd;isolation:isolate}
+[data-theme=uzbek] .opening{height:100vh;height:100svh;min-height:0;position:relative;justify-content:center;padding:calc(50px + env(safe-area-inset-top)) 24px calc(45px + env(safe-area-inset-bottom));overflow:hidden}
+[data-theme=uzbek] .opening-border{inset:calc(20px + env(safe-area-inset-top)) 20px calc(20px + env(safe-area-inset-bottom));border-color:#c5aa6b50;z-index:5}
+[data-theme=uzbek] .opening-border:before,[data-theme=uzbek] .opening-border:after{content:'';width:30px;height:30px;background:url('../assets/textures/uzbek-ornament.svg') center/contain no-repeat;padding:0;border:none}
+[data-theme=uzbek] .opening-label{color:#decb9f;z-index:4;letter-spacing:3px;font-size:10px;margin:0 0 25px}
+[data-theme=uzbek] .scene{width:320px;max-width:90vw;height:320px;flex-shrink:0;z-index:3;margin:0;transform:none}
+[data-theme=uzbek] .scene-glow{inset:-15px;background:radial-gradient(ellipse,#e6c58350,transparent 62%);filter:none;opacity:.6;z-index:-1}
+[data-theme=uzbek] .ceremony{inset:20px;filter:drop-shadow(0 17px 18px #0007);transition:transform .15s ease;transform-origin:center}
+[data-theme=uzbek] .bread .left-half,[data-theme=uzbek] .bread .right-half{position:absolute;inset:0;border-radius:0;background:url('../assets/images/uzbek-patir.svg') center/contain no-repeat;box-shadow:none;transition:transform 1.7s cubic-bezier(.2,.65,.25,1) .4s,opacity .7s 1.4s}
+[data-theme=uzbek] .bread .left-half{clip-path:inset(0 50% 0 0)}[data-theme=uzbek] .bread .right-half{clip-path:inset(0 0 0 50%)}
+[data-theme=uzbek] .bread .flap{display:none}
+[data-theme=uzbek] .open-object{position:absolute;inset:20px;width:calc(100% - 40px);height:calc(100% - 40px);background:none;border:none;box-shadow:none;border-radius:50%;color:#754523;z-index:5;display:grid;place-items:center;transform:none}
+[data-theme=uzbek] .open-object .monogram{font-family:var(--script);font-size:33px;opacity:.85;text-shadow:0 1px 0 #f6d8a188}
+[data-theme=uzbek] .open-object:hover{transform:scale(.99)}
+[data-theme=uzbek] .uz-bread-seam{position:absolute;top:37px;bottom:37px;left:50%;width:1px;background:#fae5ac;box-shadow:0 0 12px 3px #ebbc6f70;opacity:0;transform:scaleY(.05);z-index:4}
+[data-theme=uzbek] .opening-copy{z-index:4;margin-top:25px;color:#f4ebd9}
+[data-theme=uzbek] .opening-copy h1{font-size:39px;font-weight:400;letter-spacing:0;margin-bottom:14px}
+[data-theme=uzbek] .opening-copy p{font:12px Arial,sans-serif;letter-spacing:2px;color:#d4bd87}
+[data-theme=uzbek] .opening-footnote{color:#c2c8b7;font-size:13px;margin-top:18px}
+[data-theme=uzbek] .uz-courtyard-decor{position:absolute;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+[data-theme=uzbek] .uz-carved-arch{position:absolute;inset:8% 9% 5%;border:1px solid #b49a632b;border-radius:50% 50% 0 0;box-shadow:0 0 0 10px #082c2540,0 0 0 11px #c3a76d18,0 0 0 25px #061f1c35,0 0 0 26px #a98a5122}
+[data-theme=uzbek] .uz-carved-arch:before{content:'';position:absolute;inset:14px;border:1px solid #b49a6320;border-radius:inherit}
+[data-theme=uzbek] .uz-lantern{position:absolute;top:0;left:12%;width:26px;height:140px;transform-origin:top;animation:uz-lantern-sway 9s ease-in-out infinite}
+[data-theme=uzbek] .uz-lantern:nth-of-type(3){left:auto;right:12%;height:180px;animation-delay:-4s}
+[data-theme=uzbek] .uz-lantern:before{content:'';height:calc(100% - 36px);position:absolute;left:50%;border-left:1px solid #bda36c60}
+[data-theme=uzbek] .uz-lantern span{position:absolute;bottom:0;width:26px;height:36px;background:linear-gradient(90deg,#9b7740,#f2d29980 50%,#9b7740);border:1px solid #d7b978;clip-path:polygon(20% 0,80% 0,100% 18%,85% 85%,50% 100%,15% 85%,0 18%)}
+[data-theme=uzbek] .uz-lantern i{position:absolute;left:-30px;bottom:-22px;width:86px;height:86px;background:radial-gradient(circle,#e4b96733,transparent 70%);border-radius:50%}
+[data-theme=uzbek] .uz-adras-accent{position:absolute;bottom:0;height:70px;left:0;right:0;background:repeating-linear-gradient(105deg,transparent 0 24px,#b5955010 25px 27px,transparent 28px 43px,#b5955018 44px 47px,transparent 48px 64px);mask-image:linear-gradient(transparent,#000)}
+[data-theme=uzbek] .uz-dust{position:absolute;inset:15% 10% 15%;opacity:.45}
+[data-theme=uzbek] .uz-dust i{position:absolute;left:calc(8% + var(--n)*12%);top:calc(12% + var(--n)*9%);width:2px;height:2px;background:#d7bd83;border-radius:50%;animation:uz-dust 10s ease-in-out infinite;animation-delay:calc(var(--n)*-1.7s)}
+[data-theme=uzbek] .hero{height:auto;min-height:100vh;min-height:100svh;padding:calc(43px + env(safe-area-inset-top)) 26px 20px;overflow:hidden}
+[data-theme=uzbek] .hero>.eyebrow{color:#ddc79b;font-size:10px;letter-spacing:2.6px;z-index:1;margin:12px 0}
+[data-theme=uzbek] .hero-art{width:230px;height:265px;margin:35px auto 23px;position:relative;flex-shrink:0}
+[data-theme=uzbek] .uz-frame{border:1px solid #c6a971;border-radius:48% 48% 0 0;box-shadow:0 0 0 7px #12372e,0 0 0 8px #a98c5450;padding:7px}
+[data-theme=uzbek] .arch-frame{border-radius:48% 48% 0 0;border:1px solid #b59b6345;outline:none;background:radial-gradient(ellipse at center,#c09f4730,transparent 75%);padding:20px 12px}
+[data-theme=uzbek] .arch-frame:before{content:'';position:absolute;top:-19px;left:calc(50% - 15px);width:30px;height:30px;background:url('../assets/textures/uzbek-ornament.svg') center/contain #12372e}
+[data-theme=uzbek] .arch-frame>span{display:block;width:27px;height:27px;color:#c7ae78;font-size:0}
+[data-theme=uzbek] svg{width:100%;height:100%;display:block}
+[data-theme=uzbek] .arch-frame p{font-size:9px;letter-spacing:2.4px;color:#d6c49b;margin:18px 0}
+[data-theme=uzbek] .arch-frame strong{font-family:var(--script);font-size:55px;color:#f5e8cc;font-style:normal;font-weight:400;margin:0 0 14px}
+[data-theme=uzbek] .hero-art img{border-radius:48% 48% 0 0;object-fit:cover}
+[data-theme=uzbek] .hero h1{font-size:68px;line-height:1.06;margin:12px 0;color:#faf0da;z-index:1}
+[data-theme=uzbek] .hero h1 span{font-family:var(--body);font-style:italic;font-size:25px;color:#c1a569;margin:7px 0}
+[data-theme=uzbek] .hero-phrase{color:#d3d1bb;font-size:16px;margin:16px 0 8px}
+[data-theme=uzbek] .hero-date{font-size:10px;color:#d5be8e;letter-spacing:2.7px;margin:14px 0}
+[data-theme=uzbek] .scroll-cue{color:#d1b675;position:relative;padding:15px;margin-top:auto;font-size:22px}
+[data-theme=uzbek] section{border-bottom:0;padding:70px 32px;position:relative}
+[data-theme=uzbek] .uz-divider{width:34px;height:34px;margin:0 auto 30px;position:relative;color:#b29963;letter-spacing:0}
+[data-theme=uzbek] .uz-divider:before,[data-theme=uzbek] .uz-divider:after{content:'';position:absolute;width:62px;height:1px;background:linear-gradient(90deg,transparent,#b2996366);top:50%;right:calc(100% + 18px)}
+[data-theme=uzbek] .uz-divider:after{right:auto;left:calc(100% + 18px);transform:rotate(180deg)}
+[data-theme=uzbek] .message{background:#f6f0e3;padding-top:90px;padding-bottom:90px}
+[data-theme=uzbek] .uz-suzani:before{content:'';position:absolute;inset:22px;border:1px solid #b49a6335;pointer-events:none}
+[data-theme=uzbek] .message:after{content:'';position:absolute;bottom:15px;left:50%;width:44px;height:30px;transform:translateX(-50%);background:url('../assets/textures/uzbek-ornament.svg') center/contain #f6f0e3}
+[data-theme=uzbek] .message h2{font-size:34px;margin:25px 0;line-height:1.3}
+[data-theme=uzbek] .invitation-text{font-size:19px!important;line-height:1.95!important;color:#465f51!important;padding:0 8px}
+[data-theme=uzbek] .message .ornament:last-child{margin:35px auto 0}
+[data-theme=uzbek] .date-section{background:#12382e;color:#f4eddb;padding-top:75px}
+[data-theme=uzbek] .date-section>.eyebrow{color:#cfb77f}
+[data-theme=uzbek] .date-composition{width:250px;border:0;border-radius:0;background:url('../assets/textures/uzbek-ornament.svg') center/contain no-repeat;padding:32px 15px;margin:35px auto 20px;position:relative}
+[data-theme=uzbek] .date-composition:before{content:'';position:absolute;inset:0;background:#12382ee0;z-index:0}
+[data-theme=uzbek] .date-composition>*{position:relative}
+[data-theme=uzbek] .date-composition strong{font-size:142px;letter-spacing:-7px;line-height:.95;margin:14px 0;color:#f7edda}
+[data-theme=uzbek] .date-composition p{font-size:14px;letter-spacing:4px;margin:15px 0}
+[data-theme=uzbek] .date-composition>span{font-size:15px;color:#d1ba85}
+[data-theme=uzbek] .date-section .time-label{color:#d1ba85;font-size:11px;margin:26px 0}
+[data-theme=uzbek] .countdown{gap:8px;margin:35px auto 0;max-width:390px}
+[data-theme=uzbek] .countdown>div{flex:1;min-width:0;padding:17px 4px 16px;border:1px solid #b49a6355;background:#0e3028}
+[data-theme=uzbek] .countdown strong{font-size:32px;color:#f5e9d2;line-height:1}
+[data-theme=uzbek] .countdown span{font-size:9px;letter-spacing:.8px;color:#d0b780;margin-top:12px}
+[data-theme=uzbek] .date-section.reveal{transform:scale(.98)}[data-theme=uzbek] .date-section.visible{transform:scale(1)}
+[data-theme=uzbek] .schedule{background:#efe7d7}
+[data-theme=uzbek] .schedule h2{font-size:37px}
+[data-theme=uzbek] .timeline{margin-top:42px}
+[data-theme=uzbek] .timeline li{grid-template-columns:43px 33px 1fr;gap:14px;padding-bottom:37px}
+[data-theme=uzbek] .timeline li:not(:last-child):after{left:73px;top:35px;bottom:6px;background:#b49a6366}
+[data-theme=uzbek] .timeline-icon{width:32px;height:32px;padding:3px;color:#9c8148}
+[data-theme=uzbek] .timeline time{font-size:17px;line-height:32px;color:#456053}
+[data-theme=uzbek] .timeline h3{font-size:20px;line-height:1.25}
+[data-theme=uzbek] .timeline p{font-size:16px;line-height:1.65}
+[data-theme=uzbek] .uz-story{min-height:480px;padding:350px 30px 40px;text-align:center;overflow:hidden}
+[data-theme=uzbek] .uz-story-layers{position:absolute;inset:0;transform:translateY(var(--story-depth,0px));pointer-events:none}
+[data-theme=uzbek] .uz-story-arch{position:absolute;width:210px;height:255px;left:calc(50% - 105px);top:58px;border:1px solid #b59a6055;border-radius:48% 48% 0 0;box-shadow:0 0 0 12px #1d473a,0 0 0 13px #bc9e6150,0 0 0 28px #0d2e27;background:radial-gradient(ellipse at bottom,#d4ad5660,transparent 70%)}
+[data-theme=uzbek] .uz-story-arch:before{content:'';position:absolute;inset:20px;border:1px solid #b59a6044;border-radius:inherit}
+[data-theme=uzbek] .uz-story-arch:after{content:'';position:absolute;left:calc(50% - 36px);top:95px;width:72px;height:72px;background:url('../assets/textures/uzbek-ornament.svg') center/contain no-repeat;opacity:.6}
+[data-theme=uzbek] .uz-story .uz-lantern{left:23%;height:110px}[data-theme=uzbek] .uz-story .uz-lantern:nth-of-type(3){right:23%;left:auto;height:145px}
+[data-theme=uzbek] .uz-story .eyebrow{position:relative;color:#c9b581;font-size:9px;letter-spacing:2px}
+[data-theme=uzbek] .uz-story-phrase{position:relative;font-style:italic;font-size:26px!important;line-height:1.4;color:#f1e6ca!important;margin:18px 0 0}
+[data-theme=uzbek] .uz-greenery{position:absolute;left:-20px;right:-20px;bottom:85px;height:120px;background:radial-gradient(ellipse at 0% 100%,#47634a 0,transparent 32%),radial-gradient(ellipse at 100% 100%,#38563d 0,transparent 32%);opacity:.7}
+[data-theme=uzbek] .location{padding:70px 35px 80px;background:#f6f0e3}
+[data-theme=uzbek] .venue-art{height:155px;margin-bottom:36px;background:radial-gradient(ellipse at bottom,#dfcfaa70,transparent 65%)}
+[data-theme=uzbek] .venue-art>span{width:25px;height:25px}
+[data-theme=uzbek] .venue-arch{height:115px;width:105px;border-width:1px;color:#b49a63}
+[data-theme=uzbek] .location h2{font-size:38px}
+[data-theme=uzbek] .location>p:not(.eyebrow){font-size:18px}
+[data-theme=uzbek] .cta{background:#143f32;color:#f6ecda;border:1px solid #b49a63;padding:19px 23px;font-size:12px;letter-spacing:.7px;transition:transform .25s,opacity .25s}
+[data-theme=uzbek] .cta:hover{transform:translateY(-2px)}[data-theme=uzbek] .cta:active{transform:translateY(1px);opacity:.85}
+[data-theme=uzbek] .location .cta>span{width:24px;height:24px}
+[data-theme=uzbek] .rsvp{background:#ebe2d0;padding:75px 32px}
+[data-theme=uzbek] .rsvp h2{font-size:34px}
+[data-theme=uzbek] .rsvp-intro{font-size:17px!important;line-height:1.7}
+[data-theme=uzbek] form{margin-top:40px}
+[data-theme=uzbek] form>label,[data-theme=uzbek] legend{font-size:16px;color:#355644}
+[data-theme=uzbek] input:not([type=radio]),[data-theme=uzbek] textarea{background:#f7f1e4;border-color:#b49a6360;font-family:var(--body);font-size:18px;color:#173f35;padding:16px}
+[data-theme=uzbek] fieldset{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+[data-theme=uzbek] .choice{border:1px solid #b49a6350;padding:14px 8px;font-size:16px;justify-content:center;background:#f3ebdc;transition:transform .2s}
+[data-theme=uzbek] .choice:has(input:checked){background:#173f35;color:#f8eed9;border-color:#b49a63}
+[data-theme=uzbek] .choice:active{transform:scale(.98)}
+[data-theme=uzbek] input[type=radio]{accent-color:#b49a63;flex-shrink:0}
+[data-theme=uzbek] .demo-note{font-size:11px;line-height:1.7;color:#5f6d61}
+[data-theme=uzbek] form [role=status]{font-size:17px}
+[data-theme=uzbek] .uz-final{position:relative;background:#092c24;color:#f6ecd7;min-height:70vh;min-height:70svh;padding:65px 32px calc(65px + env(safe-area-inset-bottom));display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden}
+[data-theme=uzbek] .uz-final:before{border-color:#b49a6344;inset:22px}
+[data-theme=uzbek] .uz-final:after{content:'';position:absolute;inset:0;background:url('../assets/textures/uzbek-ornament.svg') center/100px;opacity:.04;pointer-events:none}
+[data-theme=uzbek] .uz-final-monogram{font-family:var(--script);font-size:83px;font-weight:400;line-height:1.4;color:#d3b675}
+[data-theme=uzbek] .uz-final p{font-size:23px;color:#efe3ca;margin:18px 0}
+[data-theme=uzbek] .uz-final h2{font-size:33px;margin:18px 0 28px;color:#e6d3aa}
+[data-theme=uzbek] .uz-final>span:last-child{font-size:11px;letter-spacing:2px;color:#c8b384}
+[data-theme=uzbek] .uz-music{background:#12372e;color:#ddc387;border:1px solid #ba9d63;box-shadow:0 3px 15px #0003;outline:1px solid #ba9d6340;outline-offset:3px;width:46px;height:46px;transition:transform .3s}
+[data-theme=uzbek] .uz-music:hover{transform:scale(1.05)}
+/* The real hero is revealed within the opening, then handed off at identical position. */
+[data-theme=uzbek] .uz-opening-hero{position:absolute;inset:0;width:100%;min-height:100%;height:100%;opacity:0;transform:scale(.98);pointer-events:none;z-index:2;transition:opacity 1.2s .45s,transform 1.5s .45s;background:transparent}
+[data-theme=uzbek] .uz-opening-hero .hero-art{transform:none!important}
+[data-theme=uzbek] .uz-opening-hero .hero-art strong,[data-theme=uzbek] .uz-opening-hero h1,[data-theme=uzbek] .uz-opening-hero .hero-date,[data-theme=uzbek] .uz-opening-hero .hero-phrase{opacity:0;transition:opacity .7s .65s}
+[data-theme=uzbek] .uz-opening-hero h1{transition-delay:1.15s}
+[data-theme=uzbek] .uz-opening-hero .hero-date,[data-theme=uzbek] .uz-opening-hero .hero-phrase{transition-delay:1.55s}
+[data-theme=uzbek] .is-opening{animation:none;background:radial-gradient(ellipse at 50% 37%,#b39c4c50,transparent 50%),linear-gradient(130deg,#163e34,#082c25 65%,#123c32)}
+[data-theme=uzbek] .is-opening .ceremony{animation:uz-press .4s ease both}
+[data-theme=uzbek] .is-opening .bread .left-half{transform:translateX(-57%) rotate(-6deg);opacity:0}
+[data-theme=uzbek] .is-opening .bread .right-half{transform:translateX(57%) rotate(6deg);opacity:0}
+[data-theme=uzbek] .is-opening .open-object{opacity:0;transform:scale(.975);transition:opacity .5s .2s,transform .15s}
+[data-theme=uzbek] .is-opening .uz-bread-seam{animation:uz-seam 1s .15s ease both}
+[data-theme=uzbek] .is-opening .uz-opening-hero{opacity:1;transform:scale(1)}
+[data-theme=uzbek] .is-opening .uz-opening-hero .hero-art strong,[data-theme=uzbek] .is-opening .uz-opening-hero h1,[data-theme=uzbek] .is-opening .uz-opening-hero .hero-date,[data-theme=uzbek] .is-opening .uz-opening-hero .hero-phrase{opacity:1}
+[data-theme=uzbek] .is-opening .opening-copy,[data-theme=uzbek] .is-opening>.opening-label{opacity:0;transition:opacity .45s}
+[data-theme=uzbek] .is-opening .scene-glow{opacity:0;transition:opacity 1s 1.3s}
+@keyframes uz-press{0%,100%{transform:scale(1)}35%{transform:scale(.975)}}@keyframes uz-seam{0%{opacity:0;transform:scaleY(.05)}30%,65%{opacity:.8;transform:scaleY(1)}100%{opacity:0;transform:scaleY(1)}}@keyframes uz-lantern-sway{50%{transform:rotate(1.3deg)}}@keyframes uz-dust{0%,100%{opacity:.2;transform:translateY(0)}50%{opacity:.6;transform:translateY(-12px)}}
+@media(min-width:600px){[data-theme=uzbek] .scene{width:350px;height:350px;margin:0;transform:none}[data-theme=uzbek] .hero-art{width:255px;height:290px}[data-theme=uzbek] .hero h1{font-size:76px}[data-theme=uzbek] section{padding-left:55px;padding-right:55px}[data-theme=uzbek] .uz-story{padding-top:350px}[data-theme=uzbek] .opening-copy{margin-top:25px}}
+@media(max-width:375px){[data-theme=uzbek] .scene{width:300px;height:300px}[data-theme=uzbek] .hero-art{width:215px;height:248px;margin-top:28px}[data-theme=uzbek] .hero h1{font-size:62px}[data-theme=uzbek] section{padding-left:25px;padding-right:25px}[data-theme=uzbek] .countdown span{font-size:8px}[data-theme=uzbek] .choice{font-size:15px;padding:14px 6px}}
+@media(max-height:740px) and (max-width:599px){[data-theme=uzbek] .scene{width:260px;height:260px;margin:0;transform:none}[data-theme=uzbek] .opening-label{margin-bottom:12px}[data-theme=uzbek] .opening-copy{margin-top:12px}[data-theme=uzbek] .opening-copy h1{font-size:32px}[data-theme=uzbek] .hero-art{width:190px;height:210px;margin:20px auto}[data-theme=uzbek] .hero h1{font-size:55px}[data-theme=uzbek] .hero-phrase{margin:10px 0 4px}}
+@media(prefers-reduced-motion:reduce){[data-theme=uzbek] .uz-lantern,[data-theme=uzbek] .uz-dust i{animation:none}[data-theme=uzbek] .uz-story-layers,[data-theme=uzbek] .uz-opening-hero,[data-theme=uzbek] .date-section.reveal{transform:none}}
+[data-theme=uzbek] .uz-music{font-size:0}[data-theme=uzbek] .uz-music:after{content:'';display:block;width:23px;height:23px;margin:auto;background:url('../assets/icons/uzbek-music.svg') center/contain no-repeat}[data-theme=uzbek] .uz-music[aria-pressed=false]:before{content:'';position:absolute;top:22px;left:9px;width:27px;height:1px;background:#dbc188;transform:rotate(-45deg)}[data-theme=uzbek] form button.cta>span{width:19px;height:19px}[data-theme=uzbek] input:disabled{opacity:.5}
+[data-theme=uzbek] .date-section:after,[data-theme=uzbek] .uz-story:after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:20px;background:radial-gradient(ellipse at top,transparent 68%,#efe7d7 69%);pointer-events:none}[data-theme=uzbek] .uz-story:after{background:radial-gradient(ellipse at top,transparent 68%,#f6f0e3 69%)}
+/* Subpixel overlap prevents a visible seam before the ceremonial light appears. */
+[data-theme=uzbek] .bread .left-half{clip-path:inset(0 calc(50% - .4px) 0 0)}[data-theme=uzbek] .bread .right-half{clip-path:inset(0 0 0 calc(50% - .4px))}
+[data-theme=uzbek] .eyebrow{font-size:10px;letter-spacing:2.2px}[data-theme=uzbek] .countdown span{font-size:10px;letter-spacing:.6px}
+[data-theme=uzbek] .uz-story-phrase{max-width:250px;margin-left:auto;margin-right:auto}

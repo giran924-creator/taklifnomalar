@@ -1,0 +1,7 @@
+export async function submitRSVP(data, endpoint) {
+ if (!data.name?.trim() || !['yes','no'].includes(data.attendance) || (data.attendance==='yes' && (!Number.isInteger(data.guests)||data.guests<1||data.guests>10))) throw new Error('Iltimos, ma’lumotlarni to‘g‘ri kiriting.');
+ const reply={...data,name:data.name.trim(),guests:data.attendance==='no'?0:data.guests,createdAt:new Date().toISOString()};
+ if(endpoint){const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(reply)}); if(!response.ok)throw new Error('Javob yuborilmadi. Qayta urinib ko‘ring.'); return 'Javobingiz yuborildi. Rahmat!';}
+ localStorage.setItem('wedding-rsvp',JSON.stringify(reply)); return 'Javob demo rejimida ushbu qurilmada saqlandi';
+}
+export function bindRSVP(form,endpoint){const status=form.querySelector('[role=status]');form.addEventListener('change',()=>{const absent=form.elements.attendance.value==='no';form.elements.guests.disabled=absent;});form.addEventListener('submit',async e=>{e.preventDefault();if(!form.reportValidity())return;const button=form.querySelector('button[type=submit]');button.disabled=true;try{status.textContent=await submitRSVP({name:form.elements.name.value,attendance:form.elements.attendance.value,guests:Number(form.elements.guests.value),comment:form.elements.comment.value},endpoint);}catch(error){status.textContent=error.name==='QuotaExceededError'?'Qurilmada saqlash imkoni yo‘q. Keyinroq urinib ko‘ring.':error.message;}finally{button.disabled=false;}});}

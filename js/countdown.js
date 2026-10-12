@@ -1,0 +1,2 @@
+export function remaining(date, now=Date.now()) { const s=Math.max(0,Math.floor((new Date(date).getTime()-now)/1000)); return [Math.floor(s/86400),Math.floor(s/3600)%24,Math.floor(s/60)%60,s%60]; }
+export function startCountdown(element,date){ const tick=()=>{const values=remaining(date); if(values.every(v=>v===0)){element.textContent='Bugun bizning baxtli kunimiz!';return;}element.innerHTML=values.map((v,i)=>`<div><strong>${String(v).padStart(2,'0')}</strong><span>${['KUN','SOAT','DAQIQA','SONIYA'][i]}</span></div>`).join('');}; tick(); return setInterval(tick,1000); }
