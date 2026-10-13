@@ -1,8 +1,8 @@
-import {setupPeel} from './peel.js';
-import {enhanceUzbek} from './uzbek.js';
-import {invitation as c,themes} from './invitation-config.js';
-import {startCountdown} from './countdown.js';import {bindRSVP} from './rsvp.js';import {createMusic} from './music.js';import {revealSections,enableParallax} from './animations.js';
-const params=new URLSearchParams(location.search);const aliases={uzbekHeritage:'uzbek',royalWaxSeal:'royal',botanicalGarden:'botanical',silkRibbon:'ribbon',samarkandNight:'samarkand',gardenGate:'garden'};const requested=params.get('theme')||aliases[c.theme]||c.theme;const theme=themes[requested]?requested:'uzbek';const t=themes[theme];document.body.dataset.theme=theme;document.body.classList.add('locked');
+import {setupPeel} from './peel.js?v=20261013-refine1';
+import {enhanceUzbek} from './uzbek.js?v=20261013-refine1';
+import {invitation as c,themes} from './invitation-config.js?v=20261013-refine1';
+import {startCountdown} from './countdown.js?v=20261013-refine1';import {bindRSVP} from './rsvp.js?v=20261013-refine1';import {createMusic} from './music.js?v=20261013-refine1';import {revealSections,enableParallax} from './animations.js?v=20261013-refine1';
+const params=new URLSearchParams(location.search);const aliases={uzbekHeritage:'uzbek',royalWaxSeal:'royal',botanicalGarden:'botanical',silkRibbon:'ribbon',samarkandNight:'samarkand',gardenGate:'garden'};const forced=document.body.dataset.forceTheme;const requested=forced||params.get('theme')||aliases[c.theme]||c.theme;const theme=themes[requested]?requested:'uzbek';const t=themes[theme];document.body.dataset.theme=theme;document.body.classList.add('locked');
 const esc=s=>String(s).replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));const safeURL=s=>{try{const u=new URL(s,location.href);return ['https:','http:'].includes(u.protocol)?u.href:'';}catch{return '';}};
 const phrase=theme==='peel'?(c.themeOptions?.peel?.phrase??t.phrase??c.phrase):c.phrase;
 const monogram=`${c.bride[0]} & ${c.groom[0]}`;document.querySelectorAll('.monogram').forEach(n=>n.textContent=monogram);document.querySelector('#opening-hint').textContent=t.hint;
