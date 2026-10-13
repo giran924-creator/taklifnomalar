@@ -1,7 +1,7 @@
-import {setupPeel} from './peel.js?v=20261013-peel2';
-import {enhanceUzbek} from './uzbek.js?v=20261013-peel2';
-import {invitation as c,themes} from './invitation-config.js?v=20261013-peel2';
-import {startCountdown} from './countdown.js?v=20261013-peel2';import {bindRSVP} from './rsvp.js?v=20261013-peel2';import {createMusic} from './music.js?v=20261013-peel2';import {revealSections,enableParallax} from './animations.js?v=20261013-peel2';
+import {setupPeel} from './peel.js?v=20261013-refine2';
+import {enhanceUzbek} from './uzbek.js?v=20261013-refine2';
+import {invitation as c,themes} from './invitation-config.js?v=20261013-refine2';
+import {startCountdown} from './countdown.js?v=20261013-refine2';import {bindRSVP} from './rsvp.js?v=20261013-refine2';import {createMusic} from './music.js?v=20261013-refine2';import {revealSections,enableParallax} from './animations.js?v=20261013-refine2';
 const params=new URLSearchParams(location.search);const aliases={uzbekHeritage:'uzbek',royalWaxSeal:'royal',botanicalGarden:'botanical',silkRibbon:'ribbon',samarkandNight:'samarkand',gardenGate:'garden'};const forced=document.body.dataset.forceTheme;const requested=forced||params.get('theme')||aliases[c.theme]||c.theme;const theme=themes[requested]?requested:'uzbek';const t=themes[theme];document.body.dataset.theme=theme;document.body.classList.add('locked');
 const esc=s=>String(s).replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));const safeURL=s=>{try{const u=new URL(s,location.href);return ['https:','http:'].includes(u.protocol)?u.href:'';}catch{return '';}};
 const phrase=theme==='peel'?(c.themeOptions?.peel?.phrase??t.phrase??c.phrase):c.phrase;

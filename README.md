@@ -59,7 +59,7 @@ Real iPhone Safari, Samsung Chrome and Telegram in-app browsers still require de
 
 ## Luxury Peel Envelope theme
 
-Implemented on `feature/peel-envelope-theme`; use `?theme=peel` to preview. Uzbek Heritage remains the default and all existing themes keep their own behavior.
+Refined on `feature/peel-premium-refine`, created from `work` with the existing Peel commits carried forward; use `?theme=peel` to preview. Uzbek Heritage remains the default and all existing themes keep their own behavior.
 
 The luxury envelope has a real pointer-driven tear strip: drag the left tab to the right. Only the pulled part peels, and the envelope unlocks at 92% travel. A tap or Enter/Space does not open it. Releasing early or pointer cancellation returns the strip gracefully. Keyboard users can repeatedly press ArrowRight to advance, ArrowLeft to reverse, and Home/Escape to reset. Reduced motion retains drag/keyboard requirements while simplifying the reveal. Music starts only on successful completion, through the existing shared controller. The inner card rises, then the matching hero composition emerges at the same position.
 
@@ -77,13 +77,13 @@ giftCards: [
 ]
 ```
 
-The zero number above is a documentation placeholder, not a real payment destination. Supply only public receiving-card details you intend to share. Gift cards default to an empty array, which hides the entire section. Only a maximum of two valid entries with a name and a 12–19 digit number are rendered. Inside each visual card, only the number and full holder name appear; labels, expiry, CVV and other metadata are never rendered. Do not add secret card details to client configuration. This section does not process payments.
+The zero number above is a documentation placeholder, not a real payment destination. Supply only public receiving-card details you intend to share. This refinement branch temporarily includes the explicitly marked preview holder `SHAXZOD NAMUNA` with number `0000 0000 0000 0000` and `giftCardsDemo: true`. The number is not a payment destination. For production, replace the preview data and set `giftCardsDemo: false`, or set `giftCards: []` to hide the section. Only a maximum of two valid entries with a name and a 12–19 digit number are rendered. Inside each visual card, only the number and full holder name appear; labels, expiry, CVV and other metadata are never rendered. Do not add secret card details to client configuration. This section does not process payments.
 
 Leave `invitation.music` null to preserve theme-specific music. Peel defaults to the existing original `assets/audio/royal.wav` piano-style demo; supply a licensed final instrumental at `assets/audio/peel-piano.mp3` and set `themeOptions.peel.music` to that path. A non-null `invitation.music` remains the shared global override.
 
 For a real portrait, place `assets/images/couple.webp` and set `invitation.heroImage` to that path. Adjust `imagePosition`, for example `'center 30%'`, to protect faces. Without a photo the theme uses a monogram, refined ring motifs and a discreet dove illustration, never generated people.
 
-Side ribbons are lightweight SVG layers at the outside edges. A passive scroll listener with a single requestAnimationFrame updates their vertical translation in both directions, bounded to 160px across the full page. They do not intercept touch or pointer events. Reduced motion leaves them static. Doves glide only a few pixels and stop moving in reduced-motion mode. All assets are CSS or inline original SVG, with no new runtime dependency.
+Side ribbons are lightweight SVG layers at the outside edges. Their top anchors and first spline segments remain fixed. A passive scroll listener with a single requestAnimationFrame adjusts only the lower spline control points and tail length in both directions; the tall paths extend beyond the viewport. The red, pearl and champagne strands have restrained material highlights. Geometry is recalculated on resize. They do not intercept touch or pointer events. Reduced motion leaves them static. Doves glide only a few pixels and stop moving in reduced-motion mode. All assets are CSS or inline original SVG, with no new runtime dependency.
 
 Validation (server running):
 
@@ -95,6 +95,16 @@ node tests/uzbek.mjs
 node tests/smoke.mjs
 ```
 
-Peel checks 360×800, 375×812, 390×844, 412×915, 430×932, 768×1024 and 1440×1000. Checks cover tap/Enter rejection, progressive partial tearing, reset below threshold, real Chromium touch events and cancellation, full mouse/touch completion, one audio start, reversible scroll ribbons, gift-field restrictions and visibility, RSVP, keyboard progress and reduced motion. Review screenshots are stored outside the repository in `/tmp/peel-review/`.
+Peel checks 360×800, 375×812, 390×844, 412×915, 430×932, 768×1024 and 1440×1000. Checks cover tap/Enter rejection, progressive partial tearing, reset below threshold, real Chromium touch events and cancellation, full mouse/touch completion, one audio start, fixed ribbon anchors with reversible lower-path deformation, pointer-transparent ribbon layers, gift-field restrictions and visibility, RSVP, keyboard progress and reduced motion. Review screenshots are stored outside the repository in `/tmp/peel-review/`.
 
 Real iPhone Safari, Samsung Chrome and Telegram in-app testing remains necessary for pointer capture, interrupted gestures, browser chrome/safe areas, media policies and physical 3D folds. Chromium touch emulation does not replace those device checks. RSVP continues to report honest localStorage demo status unless a backend is configured.
+
+The gifting section is titled “To‘yona uchun karta” and sits between Location and RSVP. The demo disclaimer appears outside the visual card, which continues to contain only number and full holder name. The premium refinement repeats a single botanical linework family across the embossed envelope, message frame and dividers, adds layered paper edges, and closes with a burgundy stationery panel and large monogram. No new asset downloads or runtime dependencies were added; `js/peel-ribbons.js` owns the isolated ribbon geometry.
+
+The current work branch’s dedicated `peel.html` page and forced-theme routing are preserved. Preview with `peel.html` or `?theme=peel`; the dedicated page stays Peel even if a conflicting query parameter is supplied. Cache version identifiers were refreshed for this refinement.
+
+The To‘yona card is a **payment card**, separate from the venue/map. Location retains its venue, address, URL and “Xaritada ochish” action. The physical payment-card face has approximately 1.586:1 proportions and contains only the grouped number and full holder name; decorative rings carry no banking metadata. An understated “Karta raqamini nusxalash” action sits beneath each card and copies the unspaced digits only. Clipboard API failure falls back to a temporary readonly textarea and the browser's copy command, then removes the textarea and restores focus. If both fail, the UI reports failure rather than false success.
+
+Customize section text through `invitation.themeOptions.peel.gifting` (`title`, `intro`, `description`). Up to two public receiving cards remain supported through `giftCards`. The all-zero preview card and external demo disclaimer remain enabled. Accidental expiry, CVV, CVC, PIN, securityCode or other properties are excluded by explicit field projection; they never appear in the card or copy action.
+
+Additional payment-card checks: `node tests/payment.mjs` validates 360, 375, 390, 412 and 430px widths, the separate map URL and popup, 1.586:1 proportions, visible demo details, two-card support, private-field exclusion, actual Chromium clipboard contents, fallback cleanup and honest failure feedback. The copy action remains keyboard-focusable while working. Review screenshots are outside the checkout in `/tmp/payment-review/`.
