@@ -1,6 +1,6 @@
 # Taklifnomalar
 
-Mobile-first cinematic wedding invitation with six CSS ceremony scenes and a shared, configuration-driven invitation engine. Uzbek interface; no runtime dependencies, external fonts, analytics or backend required.
+Mobile-first cinematic wedding invitation with seven CSS ceremony scenes and a shared, configuration-driven invitation engine. Uzbek interface; no runtime dependencies, external fonts, analytics or backend required.
 
 ## Run
 
@@ -56,3 +56,7 @@ New original assets: `assets/images/uzbek-patir.svg` (layered baked crust, stamp
 Additional validation: `node tests/uzbek.mjs` checks 360×800, 375×812, 390×844, 412×915, 430×932, 768×1024 and 1440×1000, plus guest input safety and reduced-motion keyboard opening. It writes review screenshots to `/tmp/uzbek-review/`. `npm test`, `node tests/browser.mjs`, and `node tests/smoke.mjs` remain available.
 
 Real iPhone Safari, Samsung Chrome and Telegram in-app browsers still require device testing, especially dynamic browser bars, real safe-area insets, autoplay rules and volume control (some iOS versions control media volume at system level). Chromium emulation verifies layout and behavior but cannot establish those device-specific results. RSVP remains explicitly local-device demo storage until a real endpoint is configured.
+
+## Optional Peel Envelope theme
+
+Implemented on `feature/peel-envelope-theme`. Append `?theme=peel` to preview a warm ivory stationery envelope with a corner peel, lifting flap and emerging invitation card. The default remains Uzbek Heritage; existing themes retain their styling and behavior. The new theme uses the shared config, music, countdown, RSVP and opening state guard. It reuses the original royal demo instrumental; no additional asset or dependency is required. All new presentation rules are scoped in `themes/peel.css`. Run `node tests/peel.mjs` with the development server running for its viewport and interaction checks. Validate the 3D fold on real iPhone Safari and Telegram before release.
