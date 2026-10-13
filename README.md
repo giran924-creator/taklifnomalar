@@ -57,6 +57,44 @@ Additional validation: `node tests/uzbek.mjs` checks 360×800, 375×812, 390×84
 
 Real iPhone Safari, Samsung Chrome and Telegram in-app browsers still require device testing, especially dynamic browser bars, real safe-area insets, autoplay rules and volume control (some iOS versions control media volume at system level). Chromium emulation verifies layout and behavior but cannot establish those device-specific results. RSVP remains explicitly local-device demo storage until a real endpoint is configured.
 
-## Optional Peel Envelope theme
+## Luxury Peel Envelope theme
 
-Implemented on `feature/peel-envelope-theme`. Append `?theme=peel` to preview a warm ivory stationery envelope with a corner peel, lifting flap and emerging invitation card. The default remains Uzbek Heritage; existing themes retain their styling and behavior. The new theme uses the shared config, music, countdown, RSVP and opening state guard. It reuses the original royal demo instrumental; no additional asset or dependency is required. All new presentation rules are scoped in `themes/peel.css`. Run `node tests/peel.mjs` with the development server running for its viewport and interaction checks. Validate the 3D fold on real iPhone Safari and Telegram before release.
+Implemented on `feature/peel-envelope-theme`; use `?theme=peel` to preview. Uzbek Heritage remains the default and all existing themes keep their own behavior.
+
+The luxury envelope has a real pointer-driven tear strip: drag the left tab to the right. Only the pulled part peels, and the envelope unlocks at 92% travel. A tap or Enter/Space does not open it. Releasing early or pointer cancellation returns the strip gracefully. Keyboard users can repeatedly press ArrowRight to advance, ArrowLeft to reverse, and Home/Escape to reset. Reduced motion retains drag/keyboard requirements while simplifying the reveal. Music starts only on successful completion, through the existing shared controller. The inner card rises, then the matching hero composition emerges at the same position.
+
+Customize in `js/invitation-config.js`:
+
+```js
+themeOptions: {
+  peel: {
+    phrase: 'Bir muhabbatdan boshlangan yo‘l — bir umrga ulanadi.',
+    music: null // e.g. 'assets/audio/peel-piano.mp3'
+  }
+},
+giftCards: [
+  { holder: 'FULL RECIPIENT NAME', number: '0000 0000 0000 0000', label: 'Uzcard' }
+]
+```
+
+The zero number above is a documentation placeholder, not a real payment destination. Supply only public receiving-card details you intend to share. Gift cards default to an empty array, which hides the entire section. Only a maximum of two valid entries with a name and a 12–19 digit number are rendered. Inside each visual card, only the number and full holder name appear; labels, expiry, CVV and other metadata are never rendered. Do not add secret card details to client configuration. This section does not process payments.
+
+Leave `invitation.music` null to preserve theme-specific music. Peel defaults to the existing original `assets/audio/royal.wav` piano-style demo; supply a licensed final instrumental at `assets/audio/peel-piano.mp3` and set `themeOptions.peel.music` to that path. A non-null `invitation.music` remains the shared global override.
+
+For a real portrait, place `assets/images/couple.webp` and set `invitation.heroImage` to that path. Adjust `imagePosition`, for example `'center 30%'`, to protect faces. Without a photo the theme uses a monogram, refined ring motifs and a discreet dove illustration, never generated people.
+
+Side ribbons are lightweight SVG layers at the outside edges. A passive scroll listener with a single requestAnimationFrame updates their vertical translation in both directions, bounded to 160px across the full page. They do not intercept touch or pointer events. Reduced motion leaves them static. Doves glide only a few pixels and stop moving in reduced-motion mode. All assets are CSS or inline original SVG, with no new runtime dependency.
+
+Validation (server running):
+
+```sh
+npm test
+node tests/peel.mjs
+node tests/browser.mjs
+node tests/uzbek.mjs
+node tests/smoke.mjs
+```
+
+Peel checks 360×800, 375×812, 390×844, 412×915, 430×932, 768×1024 and 1440×1000. Checks cover tap/Enter rejection, progressive partial tearing, reset below threshold, real Chromium touch events and cancellation, full mouse/touch completion, one audio start, reversible scroll ribbons, gift-field restrictions and visibility, RSVP, keyboard progress and reduced motion. Review screenshots are stored outside the repository in `/tmp/peel-review/`.
+
+Real iPhone Safari, Samsung Chrome and Telegram in-app testing remains necessary for pointer capture, interrupted gestures, browser chrome/safe areas, media policies and physical 3D folds. Chromium touch emulation does not replace those device checks. RSVP continues to report honest localStorage demo status unless a backend is configured.
