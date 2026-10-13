@@ -126,3 +126,14 @@
 @media(max-width:375px){[data-theme=peel] .hero h1{font-size:60px}[data-theme=peel] .hero-phrase{max-width:275px;font-size:18px}[data-theme=peel] .gift-number{font-size:15px;letter-spacing:.4px}[data-theme=peel] .peel-doves{width:42px;right:12px}[data-theme=peel] .peel-gifts h2{font-size:29px}}
 [data-theme=peel] .message .peel-floral-divider:last-child{margin:35px auto 0}
 [data-theme=peel] .peel-final>span:last-of-type{font:12px/1.8 Arial,sans-serif;letter-spacing:1.7px;text-transform:uppercase}
+/* Physical ISO bank-card proportions; only public number and holder on its face. */
+[data-theme=peel] .peel-gift-card{aspect-ratio:1.586/1;min-height:0;border-radius:15px;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:radial-gradient(ellipse at 20% 0%,#fffdf5,transparent 75%),repeating-linear-gradient(110deg,transparent 0 3px,#b38f5305 3px 4px),linear-gradient(135deg,#f9efdd,#dac198);box-shadow:0 13px 25px #78562d20,inset 0 1px 1px #fffaf5,inset 0 -1px 2px #aa884755;outline-offset:-8px}
+[data-theme=peel] .peel-gift-card:before{content:'';position:absolute;top:18px;right:18px;width:33px;height:33px;border:1px solid #b49a6860;border-radius:50%;box-shadow:-13px 0 0 -1px #efe0c2,-13px 0 0 0 #b49a6860;pointer-events:none}
+[data-theme=peel] .gift-number{font-family:ui-monospace,'Courier New',monospace;font-size:clamp(15px,3.9vw,17px);letter-spacing:.25px;line-height:1.5;margin:0 0 17px;color:#88613b;text-shadow:0 1px 0 #fff8;white-space:normal;word-break:normal;overflow-wrap:normal;font-variant-numeric:tabular-nums}
+[data-theme=peel] .gift-holder{font-size:11px;line-height:1.65;letter-spacing:1px;text-shadow:0 1px 0 #fff8}
+[data-theme=peel] .gift-description{font-size:16px!important;line-height:1.7!important;max-width:330px;margin:16px auto 28px}
+[data-theme=peel] .gift-copy-actions{max-width:350px;margin:10px auto 0;text-align:center}
+[data-theme=peel] .gift-copy-number{min-height:44px;padding:10px 8px;border:0;border-bottom:1px solid #b3946060;background:transparent;color:#795338;font:12px/1.5 Arial,sans-serif;cursor:pointer;transition:opacity .2s}
+[data-theme=peel] .gift-copy-number:hover{opacity:.7}
+[data-theme=peel] .gift-copy-feedback{font:11px/1.7 Arial,sans-serif;color:#795338;margin:9px 0 0;min-height:19px}
+@media(max-width:375px){[data-theme=peel] .peel-gift-card{padding:21px}[data-theme=peel] .gift-number{font-size:15px;letter-spacing:0}[data-theme=peel] .gift-holder{font-size:10px}}

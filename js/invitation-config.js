@@ -2,7 +2,7 @@ export const invitation = {
  theme: 'uzbek', bride: 'Dilnoza', groom: 'Javohir', date: '2026-11-21T18:00:00+05:00', timeZone: 'Asia/Tashkent',
  venue: { name: 'Versal Wedding Hall', address: 'Toshkent shahri', mapUrl: 'https://www.google.com/maps/search/?api=1&query=Versal+Wedding+Hall+Tashkent' },
  // Optional theme-specific customization; existing fields remain compatible.
- themeOptions: {peel:{phrase:'Bir muhabbatdan boshlangan yo‘l — bir umrga ulanadi.',music:null}},
+ themeOptions: {peel:{phrase:'Bir muhabbatdan boshlangan yo‘l — bir umrga ulanadi.',music:null,gifting:{title:'To‘yona uchun karta',intro:'Ishtirokingiz — biz uchun eng katta sovg‘a.',description:'Agar istasangiz, ezgu tilaklaringizni to‘yona shaklida ham ulashishingiz mumkin.'}}},
  // Temporary development preview only: zero digits are not a payment destination.
  giftCardsDemo: true,
  giftCards: [{holder:'SHAXZOD NAMUNA',number:'0000 0000 0000 0000',label:'Demo'}],
